@@ -1,4 +1,4 @@
-import cabaña from '../../publIC/CABANANEW.jpg';
+import cabaña from '../../public/cabana new.jpg';
 import balcon from '../../public/balcon vista.jpg'
 import { TbToolsKitchen2 } from "react-icons/tb";
 import { FaCar, FaWifi,FaSwimmingPool, FaRegSnowflake } from "react-icons/fa";
