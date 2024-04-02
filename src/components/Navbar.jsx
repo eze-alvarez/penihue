@@ -17,14 +17,14 @@ export default function Navbar() {
     }
 
   return (
-    <nav className="fixed w-full h-[106px] shadow-xl bg-penihue z-30">
+    <nav className="fixed w-full h-14 shadow-xl bg-penihue z-30">
         <div className='container mx-auto xl:max-w-5xl  flex justify-between items-center h-full w-full px-8'>
             <Link href="/">
-                <Image src={logoFrase} alt='mano' width={185} height={50} className="cursor-pointer"/>
+                <Image src={logoFrase} alt='mano'  className=" h-8 w-auto cursor-pointer"/>
             </Link>
 
-            <div className="hidden sm:flex">
-                <ul className='flex gap-x-3 text-lg xl:text-xl xl:gap-x-5'>
+            <div className="hidden text-white font-medium landscape:flex sm:flex">
+                <ul className='flex gap-x-3 text-sm xl:text-xl xl:gap-x-5'>
                     <Link href="/">
                         <li  className=" uppercase hover:border-b ">home</li>
                     </Link>
@@ -59,12 +59,12 @@ export default function Navbar() {
         >
             
             <div className="flex w-full items-center justify-end">
-                <div onClick={handleNav} className="cursor-pointer">
+                <div onClick={handleNav} className="cursor-pointer ">
                     <AiOutlineClose size={25}/>
                 </div>
             </div>
                     
-            <div className="flex-col py-4 text-white">
+            <div className="flex-col py-4 text-white font-bold">
                 <ul>
                     <Link href="/">
                         <li  
@@ -96,7 +96,7 @@ export default function Navbar() {
                 </ul>
             </div>
 
-            <div className="flex justify-around pt-10 items-center mb-16">
+            <div className="flex justify-around pt-10 items-center mb-16 font-medium">
                 <ul>
                     <li>
                         <a href='https://www.instagram.com/cabanas_penihue/' target="_blank" className="flex items-center gap-x-1">

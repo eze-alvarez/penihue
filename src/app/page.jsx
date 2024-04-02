@@ -17,37 +17,47 @@ import mes from '@/utils/CalcularMes'
 
 export default function Home() {
   return (
-    <main className="pt-[106px]">
+    <main className="pt-14">
         
      
       <div className="relative w-full">
         <picture className="absolute -z-10 w-full">
           {/* <source media='(max-width: 1199)' srcSet={cabañaTab} /> */}
-          <Image src={cabaña} alt='pile y cabaña' className=" object-cover h-[calc(100vh-106px)] w-full" />
+          <Image src={cabaña} alt='pile y cabaña' className=" object-cover h-[calc(100vh-3.5rem)] w-full" />
         </picture>
 
       </div>
 
-      <div className="h-[calc(100vh-106px)] flex items-center">
-        <div className='bg-gradient-to-b from-stone-900/50  w-[90%] h-[75vh] text-white flex flex-col  justify-center mx-auto px-2 py-2 text-center rounded-lg sm:gap-y-10 sm:py-6 sm:w-[80%] lg:w-[70%] xl:justify-end xl:gap-24 xl:py-0 2xl:gap-10'>
+      <div className="h-[calc(100vh-3.5rem)] flex items-center">
+        <div className='bg-gradient-to-b from-stone-900/50  w-[90%]  text-white flex flex-col  justify-center mx-auto px-2 py-2 text-center rounded-lg  gap-y-5
+        sm:py-6 sm:w-[80%] sm:gap-y-10 sm:landscape:gap-y-7 
+        md:landscape:gap-y-20 lg:w-[70%]
+        xl:landscape:gap-y-5 
+        '>
 
-          <div >
-            <p className='text-7xl sm:text-9xl lg:text-7xl  lg:p-10 xl:text-9xl '>Un lugar <br />
+          <div className='flex flex-col text-6xl 
+          landscape:text-6xl landscape:gap-y-3
+          sm:text-9xl 
+          md:landscape:text-9xl ' >
+            <p className=''>Un lugar <br />
             </p>
-            <p className='text-7xl sm:text-9xl lg:text-7xl  xl:text-9xl ' >para disfrutar</p>
+            <p className='' >para disfrutar</p>
           </div>
           
 
 
-          <p className='bg-blue_forza rounded-lg px-3 py-2 flex flex-col sm:text-4xl '>de la tranquilidad
-            <span className='font-bold'> y el encanto de las cumbres</span>
+          <p className='rounded-lg px-3  flex flex-col font-medium  tracking-wide sm:text-3xl sm:landscape:text-lg 
+          md:landscape:text-3xl md:landscape:gap-y-5
+          lg:landscape:font-normal
+          xl:landscape:gap-y-0'>de la tranquilidad
+            <span className='font-medium lg:landscape:font-normal'> y el encanto de las cumbres</span>
           </p>
         </div>
       </div>
      
 
       <section className=" p-6 flex flex-col sm:px-16 xl:flex-row xl:h-auto xl:max-w-5xl xl:mx-auto xl:gap-x-10">
-        <article className='py-8 '>
+        <article className='py-8'>
           <h2 className="text-penihue-side text-3xl font-bold text-center">Cabañas Peñihue</h2>
           <p className="text-penihue-text mt-8">Cómo desde hace 12 años seguimos recibiendo y agasajando a muchisimas hermosas familias para disfrutar de este maravilloso rinconcito ubicado en Carpinteria San Luis a solo 8km de Merlo y a un paso de traslasierra.Te esperamos como siempre con amigos o en familia</p>
           <br/>
@@ -63,7 +73,8 @@ export default function Home() {
       </section>
 
 
-      <section className='p-8 my-8 mx-auto bg-penihue-fondo sm:px-16 xl:mt-0 xl:max-w-5xl'>
+      <section className='p-8 my-8 mx-auto bg-penihue-fondo text-[0.85rem] sm:px-16  
+      xl:mt-0 xl:max-w-5xl'>
         <h2 className="text-penihue-side text-3xl font-bold text-center">Capacidad máxima por cabaña</h2>
         <div className="flex justify-center pt-6">
           <MdEmojiPeople size={50}/>
@@ -92,7 +103,7 @@ export default function Home() {
       <section className='px-8 mb-8 mx-auto sm:px-16 xl:max-w-5xl'>
         <h2 className="text-penihue-side text-3xl font-bold text-center">Qué ofrece cada cabaña?</h2>
 
-        <article className='pt-4 flex flex-col sm:flex-row sm:justify-around'>
+        <article className='pt-4 flex flex-col text-[0.85rem] sm:flex-row sm:justify-around '>
           <ul className='flex flex-col gap-y-2 text-penihue-text'>
             <li className='flex gap-x-3'>
               <TbToolsKitchen2 size={25} className='text-black'/>
@@ -159,7 +170,7 @@ export default function Home() {
       {/* testimonios */}
       
   
-      <section className=" bg-penihue-fondo px-8 mx-auto xl:max-w-5xl">
+      <section className=" bg-penihue-fondo px-8 mb-12 mx-auto xl:max-w-5xl">
 
         <div className="mx-auto max-w-screen-2xl px-4 py-12 sm:px-6 lg:px-8 lg:py-10 ">
 
@@ -170,9 +181,11 @@ export default function Home() {
             <div className="max-w-xl xl:max-w-2xl">
               
 
-              <p className="mt-6 max-w-lg leading-relaxed  text-penihue-text xl:max-w-full">
+              <p className="mt-6 max-w-lg leading-relaxed  text-penihue-text
+              
+              xl:max-w-full">
               Bienvenido al área de opiniones donde las historias de nuestros huéspedes cobran vida. 
-              <p className='mt-4'>
+              <p className='mt-0'>
                 Sumérgete en una colección de experiencias auténticas y opiniones sinceras de quienes han pasado tiempo en nuestras acogedoras cabañas.
               </p>
               </p>
@@ -436,7 +449,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <p className="mt-4 text-penihue-text">
+              <p className="mt-4  text-penihue-text">
               Un lugar ideal para descansar!! Con un parque en el que uno se encuentra rodeado de la naturaleza....con una hermosa pileta que esta muy bien cuidada.
               Tanto Carmen como Luis se mostraron siempre muy amables y atentos.
               <br />

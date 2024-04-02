@@ -17,7 +17,7 @@ import Image from "next/image"
 
 export default function Opiniones() {
   return (
-    <section className="bg-white pt-[106px] xl:max-w-5xl xl:mx-auto">
+    <section className="bg-white pt-14 xl:max-w-5xl xl:mx-auto">
       <div className="mx-auto max-w-screen-xl px-6 py-12 sm:px-10 lg:py-16">
         <h2 className="text-center text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
           Opiniones de Huéspedes

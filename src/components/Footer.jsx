@@ -9,7 +9,7 @@ import { MdOutlineMail } from "react-icons/md";
 export default function Footer() {
   return (
     <footer className='bg-penihue-fondo'>
-        <div className="mt-12 p-8 flex flex-col sm:px-16 xl:max-w-5xl xl:flex-row xl:items-center xl:mx-auto  xl:justify-between xl:px-12">
+        <div className="p-8 flex flex-col sm:px-16 xl:max-w-5xl xl:flex-row xl:items-center xl:mx-auto  xl:justify-between xl:px-12">
 
             <section className='max-w-60 flex flex-col items-center mx-auto xl:mx-0'>
                 <picture className="">
@@ -27,7 +27,8 @@ export default function Footer() {
                 <article >
                         <h2 className="text-penihue-side font-bold">Redes Sociales</h2>
                         
-                        <div className="flex justify-around pt-4  sm:justify-start lg:text-[0.75rem]">
+                        <div className="flex justify-around pt-4  text-[0.85rem] sm:justify-start
+                       ">
                             <ul>
                                 <li>
                                     <a href='https://www.instagram.com/cabanas_penihue/' target="_blank" className="flex items-center gap-x-1 ">
@@ -64,7 +65,7 @@ export default function Footer() {
 
                 <article>
                         <h2 className="text-penihue-side font-bold">Contacto</h2>
-                            <div className="flex justify-around pt-4 sm:justify-start lg:text-[0.75rem]">
+                            <div className="flex justify-around pt-4  text-[0.85rem] sm:justify-start">
                                 <ul>
                                     <li>
                                         <a href='https://api.whatsapp.com/send?phone=5492664732234' target="_blank" className="flex items-center gap-x-1">

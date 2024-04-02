@@ -2,9 +2,9 @@ import React from 'react'
 
 export default function Contacto() {
   return (
-    <section className="text-gray-600 body-font relative pt-[106px] xl:max-w-5xl mx-auto">
+    <section className="text-gray-600 body-font relative pt-14 xl:max-w-5xl mx-auto">
 
-        <h2 className="text-center text-4xl font-bold tracking-tight text-gray-900 mt-10 sm:text-5xl">
+        <h2 className="text-center text-3xl font-bold tracking-tight text-gray-900 mt-7 sm:text-5xl">
           Contacto
         </h2>
 
