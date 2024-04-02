@@ -38,7 +38,7 @@ export default function Home() {
           <div className='flex flex-col text-6xl 
           landscape:text-6xl landscape:gap-y-3
           sm:text-9xl 
-          md:landscape:text-9xl ' >
+          lg:landscape:text-9xl ' >
             <p className=''>Un lugar <br />
             </p>
             <p className='' >para disfrutar</p>
@@ -196,7 +196,7 @@ export default function Home() {
 
           <div className='flex justify-end'> 
             <a
-                href="#"
+                href="/opiniones"
                 className="mt-6 inline-flex shrink-0 items-center gap-2 rounded-full border border-rose-600 px-5 py-3 text-rose-600 transition hover:bg-rose-600 hover:text-white md:mt-0"
               >
                 <span className="font-medium"> ver todas </span>
