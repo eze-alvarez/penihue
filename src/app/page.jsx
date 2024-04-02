@@ -31,7 +31,7 @@ export default function Home() {
       <div className="h-[calc(100vh-3.5rem)] flex items-center">
         <div className='bg-gradient-to-b from-stone-900/50  w-[90%]  text-white flex flex-col  justify-center mx-auto px-2 py-2 text-center rounded-lg  gap-y-5
         sm:py-6 sm:w-[80%] sm:gap-y-10 sm:landscape:gap-y-7 
-        md:landscape:gap-y-20 lg:w-[70%]
+        lg:landscape:gap-y-20 lg:w-[70%]
         xl:landscape:gap-y-5 
         '>
 
@@ -47,7 +47,7 @@ export default function Home() {
 
 
           <p className='rounded-lg px-3  flex flex-col font-medium  tracking-wide sm:text-3xl sm:landscape:text-lg 
-          md:landscape:text-3xl md:landscape:gap-y-5
+          lg:landscape:text-3xl lg:landscape:gap-y-5
           lg:landscape:font-normal
           xl:landscape:gap-y-0'>de la tranquilidad
             <span className='font-medium lg:landscape:font-normal'> y el encanto de las cumbres</span>
