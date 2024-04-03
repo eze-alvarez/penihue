@@ -99,21 +99,21 @@ export default function Navbar() {
             <div className="flex justify-around pt-10 items-center mb-16 font-medium">
                 <ul>
                     <li>
-                        <a href='https://www.instagram.com/cabanas_penihue/' target="_blank" className="flex items-center gap-x-1">
+                        <a href='https://www.instagram.com/cabanas_penihue/' target="_blank" className="flex  items-center gap-x-1">
                         <AiOutlineInstagram size={25} className="cursor-pointer"/>
                         <span className="hover:text-white">cabanas_penihue</span>
                         </a>
                     </li>
 
                     <li>
-                        <a href='https://www.facebook.com/profile.php?id=100055115721974' target="_blank" className="flex items-center gap-x-1 mt-2">
-                        <FaFacebook size={25} className="cursor-pointer"/>
-                        <span className="hover:text-white">Cabanas Penihue</span>
+                        <a href='https://www.facebook.com/cabanas.penihue' target="_blank" className="flex items-start gap-x-1 mt-2 pl-1">
+                        <FaFacebook size={28} className="cursor-pointer"/>
+                        <span className="hover:text-white">Cabañas Peñihue San Luis</span>
                         </a>
                     </li>
 
                     <li>
-                        <a href='https://www.airbnb.com.ar/rooms/21802549?source_impression_id=p3_1711498488_glTf2el8ZoK9HJ6H' target="_blank" className="flex items-center gap-x-1 mt-2">
+                        <a href='https://www.airbnb.com.ar/rooms/21802549?source_impression_id=p3_1711498488_glTf2el8ZoK9HJ6H' target="_blank" className="flex  items-center gap-x-1 mt-2">
                         <FaAirbnb size={25} className="cursor-pointer"/>
                         <span className="hover:text-white">AirBnb</span>
                         </a>

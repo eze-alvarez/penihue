@@ -38,9 +38,9 @@ export default function Footer() {
                                 </li>
 
                                 <li>
-                                    <a href='https://www.facebook.com/profile.php?id=100055115721974' target="_blank" className="flex items-center gap-x-1 mt-2">
+                                    <a href='https://www.facebook.com/cabanas.penihue' target="_blank" className="flex items-center gap-x-1 mt-2">
                                     <FaFacebook size={25} className="cursor-pointer"/>
-                                    <span className="hover:text-white">Facebook :  Cabanas Penihue</span>
+                                    <span className="hover:text-white">Facebook : Cabañas Peñihue San Luis</span>
                                     </a>
                                 </li>
 

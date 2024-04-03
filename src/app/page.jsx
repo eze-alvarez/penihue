@@ -29,16 +29,20 @@ export default function Home() {
       </div>
 
       <div className="h-[calc(100vh-3.5rem)] flex items-center">
-        <div className='bg-gradient-to-b from-stone-900/50  w-[90%]  text-white flex flex-col  justify-center mx-auto px-2 py-2 text-center rounded-lg  gap-y-5
-        sm:py-6 sm:w-[80%] sm:gap-y-10 sm:landscape:gap-y-7 
-        lg:landscape:gap-y-20 lg:w-[70%]
+        <div className='bg-gradient-to-b from-stone-900/50
+          w-[90%]  text-white flex flex-col  justify-center mx-auto px-2 py-8 text-center rounded-lg  gap-y-5
+        landscape:py-5 landscape:max-w-[60%]
+        sm:py-6 sm:w-[80%] sm:gap-y-10 sm:landscape:gap-y-3
+        md:landscape:max-w-[50%] 
+        lg:landscape:gap-y-20 lg:landscape:max-w-[60%] lg:w-[70%]
         xl:landscape:gap-y-5 
+        2xl:landscape:py-12
         '>
 
           <div className='flex flex-col text-6xl 
-          landscape:text-6xl landscape:gap-y-3
+          landscape:text-5xl landscape:gap-y-1
           sm:text-9xl 
-          lg:landscape:text-9xl ' >
+          lg:landscape:text-8xl lg:landscape:gap-y-4' >
             <p className=''>Un lugar <br />
             </p>
             <p className='' >para disfrutar</p>
@@ -46,7 +50,7 @@ export default function Home() {
           
 
 
-          <p className='rounded-lg px-3  flex flex-col font-medium  tracking-wide sm:text-3xl sm:landscape:text-lg 
+          <p className='rounded-lg px-3  flex flex-col font-medium  tracking-wide sm:text-3xl sm:landscape:text-base 
           lg:landscape:text-3xl lg:landscape:gap-y-5
           lg:landscape:font-normal
           xl:landscape:gap-y-0'>de la tranquilidad
@@ -56,24 +60,28 @@ export default function Home() {
       </div>
      
 
-      <section className=" p-6 flex flex-col sm:px-16 xl:flex-row xl:h-auto xl:max-w-5xl xl:mx-auto xl:gap-x-10">
-        <article className='py-8'>
+      <section className=" px-6 py-8 flex flex-col sm:px-16 
+      md:landscape:flex-row md:landscape:h-auto md:landscape:gap-x-5
+      xl:flex-row xl:h-auto xl:max-w-5xl xl:mx-auto xl:landscape:gap-x-16">
+        <article >
           <h2 className="text-penihue-side text-3xl font-bold text-center">Cabañas Peñihue</h2>
-          <p className="text-penihue-text mt-8">Cómo desde hace 12 años seguimos recibiendo y agasajando a muchisimas hermosas familias para disfrutar de este maravilloso rinconcito ubicado en Carpinteria San Luis a solo 8km de Merlo y a un paso de traslasierra.Te esperamos como siempre con amigos o en familia</p>
+          <p className="text-penihue-text pt-5">Cómo desde hace 12 años seguimos recibiendo y agasajando a muchisimas hermosas familias para disfrutar de este maravilloso rinconcito ubicado en Carpinteria San Luis a solo 8km de Merlo y a un paso de traslasierra.Te esperamos como siempre con amigos o en familia</p>
           <br/>
-          <p className="text-penihue-text">Estamos en {mes()} y el turismo esta recorriendo los centros gastronómicos, sierras , arroyos, miradares, ferias artesanales, y disfrutando de diversas aventuras como traking, escalada, puentes colgantes, cabalgatas, Tirolesa.</p>
+          <p className="text-penihue-text">Estamos en {mes()} y el turismo esta recorriendo los centros gastronómicos, sierras , arroyos, miradores, ferias artesanales, y disfrutando de diversas aventuras como traking, escalada, puentes colgantes, cabalgatas, Tirolesa.</p>
           <br />
           <blockquote className="text-penihue-text text-center italic text-lg font-bold">Cabañas Peñihue te espera</blockquote>
         </article>
       
-        <picture className=" w-full ">
+        <picture className=" mt-5 mx-auto w-full  landscape:w-[50%] 
+        md:landscape:mt-0 md:landscape:w-[150%] md:landscape:items-center
+        ">
           {/* <source media='(max-width: 1199)' srcSet={cabañaTab} /> */}
           <Image src={balcon} alt='balcon hacia la montaña' className="object-contain xl:h-[100%]" />
         </picture>
       </section>
 
 
-      <section className='p-8 my-8 mx-auto bg-penihue-fondo text-[0.85rem] sm:px-16  
+      <section className='p-8 mx-auto bg-penihue-fondo text-[0.85rem] sm:px-16  
       xl:mt-0 xl:max-w-5xl'>
         <h2 className="text-penihue-side text-3xl font-bold text-center">Capacidad máxima por cabaña</h2>
         <div className="flex justify-center pt-6">
@@ -100,7 +108,7 @@ export default function Home() {
       </section>  
 
 
-      <section className='px-8 mb-8 mx-auto sm:px-16 xl:max-w-5xl'>
+      <section className='px-8 py-8 mx-auto sm:px-16 xl:max-w-5xl'>
         <h2 className="text-penihue-side text-3xl font-bold text-center">Qué ofrece cada cabaña?</h2>
 
         <article className='pt-4 flex flex-col text-[0.85rem] sm:flex-row sm:justify-around '>
@@ -154,7 +162,7 @@ export default function Home() {
 
             <li className='flex gap-x-3'>
               <GiTowel size={25} className='text-black'/>
-              <span>Toallas, sábanas, jabón y papel higiénico</span>
+              <span> Ropa blanca (sábanas toalla y toallón)</span>
             </li>
 
             <li className='flex gap-x-3'>
@@ -172,7 +180,7 @@ export default function Home() {
   
       <section className=" bg-penihue-fondo px-8 mb-12 mx-auto xl:max-w-5xl">
 
-        <div className="mx-auto max-w-screen-2xl px-4 py-12 sm:px-6 lg:px-8 lg:py-10 ">
+        <div className="mx-auto max-w-screen-2xl px-4 py-8 sm:px-6 lg:px-8 lg:py-10 ">
 
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 text-center">
                 Experiencia de los Huéspedes
