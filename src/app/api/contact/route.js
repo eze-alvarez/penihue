@@ -34,7 +34,7 @@ export  async function POST(request){
     });
 
 
-    try{
+    // try{
         // const mail = await transporter.sendMail({
         //     from: user,
         //     to: penihueEmail,
@@ -68,28 +68,28 @@ export  async function POST(request){
         //     <p>Mensaje: ${message}</p>
         //     `
         // })
-        const mail1 = {
-            from: user,
-            to: penihueEmail,
-            replyTo: email,
-            subject: `Cabanas Penihue recibio la consulta de : ${name}`,
-            html: `
-            <p>Nombre: ${name}</p>
-            <p>Email: ${email}</p>
-            <p>Mensaje: ${message}</p>
-            `
-        }
-        const mail2 = {
-            from: user,
-            to: penihuePam,
-            replyTo: email,
-            subject: `Cabanas Penihue recibio la consulta de : ${name}`,
-            html: `
-            <p>Nombre: ${name}</p>
-            <p>Email: ${email}</p>
-            <p>Mensaje: ${message}</p>
-            `
-        }
+        // const mail1 = {
+        //     from: user,
+        //     to: penihueEmail,
+        //     replyTo: email,
+        //     subject: `Cabanas Penihue recibio la consulta de : ${name}`,
+        //     html: `
+        //     <p>Nombre: ${name}</p>
+        //     <p>Email: ${email}</p>
+        //     <p>Mensaje: ${message}</p>
+        //     `
+        // }
+        // const mail2 = {
+        //     from: user,
+        //     to: penihuePam,
+        //     replyTo: email,
+        //     subject: `Cabanas Penihue recibio la consulta de : ${name}`,
+        //     html: `
+        //     <p>Nombre: ${name}</p>
+        //     <p>Email: ${email}</p>
+        //     <p>Mensaje: ${message}</p>
+        //     `
+        // }
         const mail3 = {
             from: user,
             to: admin,
@@ -125,14 +125,14 @@ export  async function POST(request){
         })
         // return res.status(200).json({message:'success'})
 
-    }catch(error){
-        console.log(error)
-        return NextResponse.json({
-            message: "Could not send the email. Your message was not sent"
-        })
-        // res.status(500).json({
-        //     message: "Could not send the email. Your message was not sent"
-        // })
-    }
+    // }catch(error){
+    //     console.log(error)
+    //     return NextResponse.json({
+    //         message: "Could not send the email. Your message was not sent"
+    //     })
+    //     // res.status(500).json({
+    //     //     message: "Could not send the email. Your message was not sent"
+    //     // })
+    // }
 
 }
