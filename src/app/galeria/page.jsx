@@ -31,7 +31,7 @@ export default function Galeria() {
   return (
     <div className='pt-14 xl:max-w-5xl mx-auto'>
 
-        <h2 className="text-center text-3xl font-bold tracking-tight text-gray-900 mt-7 sm:text-5xl">
+        <h2 className="text-center text-3xl font-bold tracking-tight text-gray-900 pt-12 lg:text-5xl">
           Galeria
         </h2>
 

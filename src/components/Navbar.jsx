@@ -3,9 +3,9 @@ import React from 'react'
 import logoFrase from '../../public/cabañas LOGO nav.png'
 import Image from 'next/image'
 import Link from 'next/link'
-import { AiOutlineMenu,AiOutlineClose, AiOutlineInstagram } from "react-icons/ai";
+import { AiOutlineMenu, AiOutlineInstagram } from "react-icons/ai";
 import { TbBrandBooking } from "react-icons/tb";
-import { FaFacebook, FaAirbnb,  } from "react-icons/fa";
+import { FaFacebook, FaAirbnb, FaWindowClose, FaBars} from "react-icons/fa";
 import { useState } from 'react';
 
 
@@ -45,8 +45,8 @@ export default function Navbar() {
 
             <div
             onClick={handleNav}
-            className="sm:hidden cursor-pointer pl-24"    >
-                <AiOutlineMenu size={25}/>
+            className="sm:hidden cursor-pointer pl-24 text-white"    >
+                <FaBars size={25}/>
             </div>
         </div>
 
@@ -58,9 +58,9 @@ export default function Navbar() {
         }
         >
             
-            <div className="flex w-full items-center justify-end">
+            <div className="flex w-full items-center justify-end text-white">
                 <div onClick={handleNav} className="cursor-pointer ">
-                    <AiOutlineClose size={25}/>
+                    <FaWindowClose size={25}/>
                 </div>
             </div>
                     
@@ -98,19 +98,6 @@ export default function Navbar() {
 
             <div className="flex justify-around pt-10 items-center mb-16 font-medium">
                 <ul>
-                    <li>
-                        <a href='https://www.instagram.com/cabanas_penihue/' target="_blank" className="flex  items-center gap-x-1">
-                        <AiOutlineInstagram size={25} className="cursor-pointer"/>
-                        <span className="hover:text-white">cabanas_penihue</span>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href='https://www.facebook.com/cabanas.penihue' target="_blank" className="flex items-start gap-x-1 mt-2 pl-1">
-                        <FaFacebook size={28} className="cursor-pointer"/>
-                        <span className="hover:text-white">Cabañas Peñihue San Luis</span>
-                        </a>
-                    </li>
 
                     <li>
                         <a href='https://www.airbnb.com.ar/rooms/21802549?source_impression_id=p3_1711498488_glTf2el8ZoK9HJ6H' target="_blank" className="flex  items-center gap-x-1 mt-2">
@@ -123,6 +110,20 @@ export default function Navbar() {
                         <a href='https://www.booking.com/hotel/ar/cabanas-penihue.es-ar.html' target="_blank" className="flex items-center gap-x-1 mt-2">
                         <TbBrandBooking size={25} className="cursor-pointer"/>
                         <span className="hover:text-white">Booking</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href='https://www.instagram.com/cabanas_penihue/' target="_blank" className="flex  items-center gap-x-1 mt-2">
+                        <AiOutlineInstagram size={25} className="cursor-pointer"/>
+                        <span className="hover:text-white">cabanas_penihue</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href='https://www.facebook.com/cabanas.penihue' target="_blank" className="flex items-start gap-x-1 mt-2 pl-1">
+                        <FaFacebook size={28} className="cursor-pointer"/>
+                        <span className="hover:text-white">Cabañas Peñihue San Luis</span>
                         </a>
                     </li>
                     
