@@ -8,6 +8,7 @@ export  async function POST(request){
     const user = process.env.USER
     const penihueEmail = process.env.PENIH
     const penihuePam = process.env.PAM
+    const admin = process.env.ADMIN
 
     const transporter = nodemailer.createTransport({
         host: "smtp.gmail.com",
@@ -24,7 +25,7 @@ export  async function POST(request){
             from: user,
             to: penihueEmail,
             replyTo: email,
-            subject: `Contact form submission from ${name}`,
+            subject: `Cabanas Penihue recibio la consulta de : ${name}`,
             html: `
             <p>Nombre: ${name}</p>
             <p>Email: ${email}</p>
@@ -35,7 +36,18 @@ export  async function POST(request){
             from: user,
             to: penihuePam,
             replyTo: email,
-            subject: `Contact form submission from ${name}`,
+            subject: `Cabanas Penihue recibio la consulta de : ${name}`,
+            html: `
+            <p>Nombre: ${name}</p>
+            <p>Email: ${email}</p>
+            <p>Mensaje: ${message}</p>
+            `
+        })
+        const mail3 = await transporter.sendMail({
+            from: user,
+            to: admin,
+            replyTo: email,
+            subject: `Cabanas Penihue recibio la consulta de : ${name}`,
             html: `
             <p>Nombre: ${name}</p>
             <p>Email: ${email}</p>
@@ -46,6 +58,7 @@ export  async function POST(request){
 
         console.log('Message sent: %s', mail.messageId)
         console.log('Message sent: %s', mail2.messageId)
+        console.log('Message sent: %s', mail3.messageId)
 
         return NextResponse.json({
             message:'success'
