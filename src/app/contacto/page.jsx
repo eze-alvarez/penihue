@@ -5,7 +5,7 @@ import { FaWhatsapp, FaMapMarkerAlt } from "react-icons/fa";
 export default function Contacto() {
   return (
     <section className="text-penihue-text body-font pt-14  mx-auto
-    xl:max-w-5xl xl:min-h-[calc(100vh-17.5rem+36px)]">
+    xl:max-w-5xl xl:min-h-[calc(100vh-224px)]">
 
         <h2 className="text-center text-3xl font-bold tracking-tight text-gray-900 lg:text-5xl pt-12">
           Contacto
@@ -65,7 +65,7 @@ export default function Contacto() {
                         marginWidth={0}
                         scrolling="no"
                         referrerPolicy="no-referrer-when-downgrade"
-                        loading="lazy"
+                        
                         allowFullScreen=""
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3368.1550746096777!2d-65.01003632458557!3d-32.415003945235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95d2e3673051faf9%3A0xb7ecfe089039c865!2zQ2FiYcOxYXMgUGXDsWlodWU!5e0!3m2!1ses-419!2sar!4v1712941133185!5m2!1ses-419!2sar"
                         // style={{ filter: " contrast(1.2) opacity(0.8)" }}

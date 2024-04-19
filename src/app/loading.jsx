@@ -2,13 +2,16 @@ import React from 'react'
 
 export default function Loading() {
   return (
-    <div className='pt-14'>
+
         <div
         aria-label="Loading..."
         role="status"
-        className=" flex justify-center space-x-2"
+        className=" flex justify-center items-center space-x-2 
+        h-screen  w-full bg-penihue
+        sm:h-[calc(100vh-419px)]
+        sm:landscape:h-screen lg:landscape:h-[calc(100vh-224px)]"
     >
-        <svg className="h-20 w-20 animate-spin stroke-gray-500" viewBox="0 0 256 256">
+        <svg className="h-20 w-20 animate-spin stroke-gray-100" viewBox="0 0 256 256">
             <line
             x1={128}
             y1={32}
@@ -82,9 +85,9 @@ export default function Loading() {
             strokeWidth={24}
             ></line>
         </svg>
-        <span className="text-4xl font-medium text-gray-500">Loading...</span>
+        <span className="text-4xl font-medium text-gray-100">Loading...</span>
     </div>
-    </div>
+    
     
 
   )

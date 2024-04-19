@@ -1,102 +1,151 @@
 'use client'
 import { useState } from "react";
+import axios from 'axios';
+import { useRouter } from 'next/navigation'
 
 export default function ContactForm() {
-    const [loading, setLoading] = useState(false)
+    const path = process.env.PATH
+    const router = useRouter()
 
-    async function handleSubmit(event) {
-        event.preventDefault()
-        setLoading(true)
+    const [status, setStatus] = useState({
+        submitted: false,
+        submitting: false,
+        info: { error: false, msg: null },
+    });
 
-        const data = {
-            name: String(event.target.name.value),
-            email: String(event.target.email.value),
-            message: String(event.target.message.value)
-        };
+    const [inputs, setInputs] = useState({
+        name: '',
+        email: '',
+        message: '',
+    });
 
-        const response = await fetch('/api/contact', {
-            method: 'POST',
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data)
+    const handleServerResponse = (ok, msg) => {
+        if (ok) {
+          setStatus({
+            submitted: true,
+            submitting: false,
+            info: { error: false, msg: msg },
+          });
+          setInputs({
+            message: '',
+            email: '',
+            message: '',
+          });
+        } else {
+          setStatus({
+            info: { error: true, msg: msg },
+          });
+        }
+    };
+    const handleOnChange = (e) => {
+        e.persist();
+        setInputs((prev) => ({
+          ...prev,
+          [e.target.id]: e.target.value,
+        }));
+        setStatus({
+          submitted: false,
+          submitting: false,
+          info: { error: false, msg: null },
+        });
+    };
+    const handleOnSubmit = (e) => {
+        e.preventDefault();
+        setStatus((prevStatus) => ({ ...prevStatus, submitting: true }));
+        axios({
+          method: 'POST',
+          url: path,
+          data: inputs,
         })
+          .then((response) => {
+            handleServerResponse(
+              true,
+              'Gracias, tu mensaje fué enviado',
+            );
+            router.push('/gracias')
+          })
+          .catch((error) => {
+            handleServerResponse(false, error.response.data.error);
+          });
+    };
 
-        if(response.ok){
-            console.log("Message sent succesefully")
-            setLoading(false)
-            event.target.name.value = ''
-            event.target.email.value = ''
-            event.target.message.value = ''
-        }
-        if(!response.ok){
-            console.log("Error sendind message")
-            setLoading(false)
-        }
-
-      }
+      
   return (
-    <form onSubmit={handleSubmit}>
-        <div className="relative mb-4">
-            <label htmlFor="name" className="leading-7 text-sm text-gray-600">
-            Nombre
-            </label>
+    <>
+        <form onSubmit={handleOnSubmit}>
+            <div className="relative mb-4">
+                <label htmlFor="name" className="leading-7 text-sm text-gray-600">
+                Nombre
+                </label>
 
-            <input
-            required
-            placeholder="Escribinos tu nombre acá .."
-            type="text"
-            autoComplete="off"
-            id="name"
-            name="name"
-            minLength={3}
-            maxLength={50}
-            className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-            />
-        </div>
-        <div className="relative mb-4">
-            <label htmlFor="email" className="leading-7 text-sm text-gray-600">
-            Email
-            </label>
-            <input
-            required
-            placeholder="ejemplo@mail.com"
-            type="email"
-            autoComplete="off"
-            id="email"
-            name="email"
-            minLength={5}
-            maxLength={50}
-            className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-            />
-        </div>
+                <input
+                required
+                id="name"
+                type="text"
+                name="name"
+                onChange={handleOnChange}
+                value={inputs.name}
+                placeholder="Escribinos tu nombre acá .."
+                autoComplete="off"
+                minLength={3}
+                maxLength={50}
+                className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                />
+            </div>
+            <div className="relative mb-4">
+                <label htmlFor="email" className="leading-7 text-sm text-gray-600">
+                Email
+                </label>
+                <input
+                required
+                id="email"
+                type="email"
+                name="_replyto"
+                onChange={handleOnChange}
+                value={inputs.email}
+                placeholder="ejemplo@mail.com"
+                autoComplete="off"
+                minLength={5}
+                maxLength={50}
+                className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                />
+            </div>
 
-        <div className="relative mb-4">
-            <label htmlFor="message" className="leading-7 text-sm text-gray-600">
-            Mensaje
-            </label>
-            <textarea
-            required
-            placeholder="Dejanos tu mensaje .."
-            id="message"
-            name="message"
-            rows={4}
-            minLength={10}
-            maxLength={500}
+            <div className="relative mb-4">
+                <label htmlFor="message" className="leading-7 text-sm text-gray-600">
+                Mensaje
+                </label>
+                <textarea
+                required
+                id="message"
+                name="message"
+                placeholder="Dejanos tu mensaje .."
+                onChange={handleOnChange}
+                value={inputs.message}
+                rows={4}
+                minLength={10}
+                maxLength={500}
 
-            className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 h-20 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
-            defaultValue={""}
-            />
-        </div>
-        <button 
-        type="submit"
-        disabled={loading}
-        className="text-white bg-indigo-500 border-0 py-2 px-6 
-        disabled:bg-gray-400 disabled:text-gray-100
-        focus:outline-none hover:bg-indigo-600 rounded text-lg"
-        >
-            Enviar
-        </button>
-    </form>
+                className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 h-20 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                
+                />
+            </div>
+            <button 
+            type="submit"
+            disabled={status.submitting}
+            className="text-white bg-indigo-500 border-0 py-2 px-6 
+            disabled:bg-gray-400 disabled:text-gray-100
+            focus:outline-none hover:bg-indigo-600 rounded text-lg"
+            >
+            {!status.submitting
+                ? !status.submitted
+                ? 'Submit'
+                : 'Submitted'
+                : 'Submitting...'}
+            </button>
+
+            {!status.info.error && status.info.msg && <p>{status.info.msg}</p>}
+        </form>   
+    </>
   )
 }

@@ -21,9 +21,17 @@ export default function Home() {
         
      
       <div className="relative w-full">
-        <picture className="absolute -z-10 w-full">
+        <picture className="absolute  -z-10 h-[calc(100vh-3.5rem)] w-full">
           {/* <source media='(max-width: 1199)' srcSet={cabañaTab} /> */}
-          <Image src={cabaña} alt='pile y cabaña' className=" object-cover h-[calc(100vh-3.5rem)] w-full" />
+          <Image 
+          src={cabaña} alt='pile y cabaña' 
+          className="static object-cover " 
+          priority={true}
+          fill
+          objectFit='cover'
+          sizes='100vw '
+          />
+        
         </picture>
 
       </div>
@@ -76,7 +84,8 @@ export default function Home() {
         md:landscape:mt-0 md:landscape:w-[150%] md:landscape:items-center
         ">
           {/* <source media='(max-width: 1199)' srcSet={cabañaTab} /> */}
-          <Image src={balcon} alt='balcon hacia la montaña' className="object-contain xl:h-[100%]" />
+          <Image src={balcon} alt='balcon hacia la montaña' className="object-contain xl:h-[100%]"
+          sizws='100vw' />
         </picture>
       </section>
 

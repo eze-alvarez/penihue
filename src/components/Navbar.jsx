@@ -1,9 +1,9 @@
 'use client'
 import React from 'react'
-import logoFrase from '../../public/cabañas LOGO nav.png'
+import logoFrase from '../../public/cabañas LOGO.png'
 import Image from 'next/image'
 import Link from 'next/link'
-import { AiOutlineMenu, AiOutlineInstagram } from "react-icons/ai";
+import { AiOutlineInstagram } from "react-icons/ai";
 import { TbBrandBooking } from "react-icons/tb";
 import { FaFacebook, FaAirbnb, FaWindowClose, FaBars} from "react-icons/fa";
 import { useState } from 'react';
@@ -20,7 +20,7 @@ export default function Navbar() {
     <nav className="fixed w-full h-14 shadow-xl bg-penihue z-30">
         <div className='container mx-auto xl:max-w-5xl  flex justify-between items-center h-full w-full px-8'>
             <Link href="/">
-                <Image src={logoFrase} alt='mano'  className=" h-8 w-auto cursor-pointer"/>
+                <Image src={logoFrase} alt='mano' priority  className=" h-8 w-auto cursor-pointer"/>
             </Link>
 
             <div className="hidden text-white font-medium landscape:flex sm:flex">
