@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useRouter } from 'next/navigation'
 
 export default function ContactForm() {
-    const path = process.env.PATH
+    // const path = process.env.PATH
     const router = useRouter()
 
     const [status, setStatus] = useState({
@@ -17,6 +17,7 @@ export default function ContactForm() {
         name: '',
         email: '',
         message: '',
+        _subject:'Consulta a Cabañas Peñihue'
     });
 
     const handleServerResponse = (ok, msg) => {
@@ -30,6 +31,8 @@ export default function ContactForm() {
             message: '',
             email: '',
             message: '',
+            _subject:'Consulta a Cabañas Peñihue'
+            
           });
         } else {
           setStatus({
@@ -51,10 +54,11 @@ export default function ContactForm() {
     };
     const handleOnSubmit = (e) => {
         e.preventDefault();
+        console.log(inputs._subject)
         setStatus((prevStatus) => ({ ...prevStatus, submitting: true }));
         axios({
           method: 'POST',
-          url: path,
+          url: "https://formspree.io/f/mqkrwzwa",
           data: inputs,
         })
           .then((response) => {
@@ -109,6 +113,7 @@ export default function ContactForm() {
                 maxLength={50}
                 className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                 />
+                <input type="hidden" name="_subject" value="Consulta a Cabañas Peñihue"></input>
             </div>
 
             <div className="relative mb-4">

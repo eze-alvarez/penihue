@@ -1,6 +1,7 @@
 'use client'
 import ContactForm from "./ContactForm";
 import { FaWhatsapp, FaMapMarkerAlt } from "react-icons/fa";
+import { Suspense } from "react";
 
 export default function Contacto() {
   return (
@@ -54,7 +55,7 @@ export default function Contacto() {
                 <div className='w-full py-6
                 lg:landscape:max-w-1/2'>
               
-                
+                    
                     <iframe
                         height="100%"
                         width="100%"
